@@ -1,0 +1,671 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+body{
+    background-color: rgb(21, 48, 88);
+    font-family: 'Poppins', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 1em;
+    background-color: rgb(169, 195, 245);
+    border-radius: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(79, 126, 217);
+    border-radius: 0.5em;
+}
+p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: rgb(223, 227, 235);
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#actionBar{
+    width: 100%;
+    
+    padding-left: 15%;
+}
+
+.likeButton{
+    width: 20px;
+    margin-left: 1em;
+}
+
+.userName{
+    font-size: 1em;
+}
+
+/** ---- PROFILE PAGE ---- */
+
+#contentProfilePage{
+    max-width: 100vw;
+    
+}
+
+#userContainer{
+    font-size: x-large;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    color: rgb(205, 222, 254);
+    background-color: rgb(4, 57, 119);
+    margin-bottom: 1em;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#banner{
+    background-color: rgb(79, 126, 217);
+    padding: 4em;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+#biography{
+    font-size: x-small;
+}
+#creationDate{
+    font-size: x-small;
+}
+
+#post{
+    color: rgb(205, 222, 254);
+    background-color: rgb(4, 57, 119);
+    border-radius: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+}
+
+#postText{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+}
+
+#postAuthor{
+    font-size: 1.6em;
+    /*text-decoration: underline;*/
+}
+
+
+
+#image{
+    border-radius: 1em;
+}
+
+#imageDiv{
+    display: flex;
+    justify-content: center;
+}
+
+/** ---- TOP KWICKS ---- */
+
+#tableTopKiwcks{
+    margin-top: 2em;
+}
+
+/** ---- SIDE BAR ---- */
+.icon{
+    height: 23px;
+    width: 23px;
+}
+
+
+#sidebar {
+    width: 12em;
+    min-height: 100vh;
+    padding-left: 1em;
+    padding-top: 1em;
+}
+
+#sidebarContainer{
+    position: sticky;
+    top: 0;
+}
+
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#sidebar {
+    /* don't forget to add all the previously mentioned styles here too */
+    color: rgb(209, 203, 229);
+    transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: rgb(21, 48, 88);
+    background: rgb(79, 126, 217);
+}
+
+#sidebar ul li.active{
+    color: rgb(21, 48, 88);
+    background: rgb(101, 148, 239);
+}
+
+
+/**
+    -----------------------------------------------------
+                       HomePage
+    -----------------------------------------------------
+ */
+
+/**
+            Ajout d'un kwick
+ */
+
+/*Clearing Floats*/
+.newPost:before, .newPost:after{
+    content:"";
+    display:table;
+}
+
+.newPost:after{
+    clear:both;
+}
+
+.newPost{
+    zoom:1;
+}
+/* Form wrapper styling */
+
+.newPost {
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    /*width: 450px;*/
+    /*margin: 150px auto 50px auto;*/
+    border-radius: 40px;
+    /*background: transparent;*/
+}
+
+/* Form text input */
+
+#textPost {
+    width: 75%;
+    height: 50px;
+    float: left;
+    border: 0;
+    background: #fff;
+    border-bottom-left-radius: 40px;
+    border-top-left-radius: 40px;
+    border-top-style: none;
+    padding-left: 20px;
+}
+
+#textPost:focus {
+    outline: 0;
+    background: #fff;
+    box-shadow: 0 0 2px rgba(0,0,0,0.8) inset;
+}
+
+#textPost::-webkit-input-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+    padding-left: 20px;
+}
+
+#textPost:-moz-placeholder {
+
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}
+
+#textPost:-ms-input-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+    border-style: none;
+}
+
+/***************************************************************************************
+* Title: CodePen Home Button inside Input
+* Author: Noor
+* Date: ?
+* Code version: 1.0
+* Availability: https://codepen.io/NoorA1125/pen/movOEN
+***************************************************************************************/
+#buttonPost {
+    overflow: visible;
+    position: relative;
+    float: right;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 50px;
+    width: 25%;
+    color: #fff;
+    background: #043977;
+    border-bottom-right-radius: 40px;
+    border-top-right-radius: 40px;
+    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+}
+
+#buttonPost:hover{
+    background: rgb(79,126,217);
+}
+
+#buttonPost:focus:before,
+#buttonPost:active:before{
+    border-right-color: rgb(79,126,217);
+}
+
+#buttonPost:active,
+#buttonPost:focus{
+    background: #043977;
+    outline: 0;
+}
+
+#buttonPost::-moz-focus-inner { /* remove extra button spacing for Mozilla Firefox */
+    border: 0;
+    padding: 0;
+}
+
+/**
+    -----------------------------------------------------
+                       RegisterPage
+    -----------------------------------------------------
+ */
+
+ .loginText{
+     color: rgb(79,126,217);
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+.loginRegisterContainer{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    position: absolute;
+    height: 600px;
+    width: 35vw;
+    margin: 10vh 35vw;
+    padding: 5vw;
+    background-color: rgb(21, 58, 114);
+}
+
+#logoRegister{
+    height: 20vh;
+    width: 30vw;
+    margin: 0 auto;
+}
+
+.inputForm{
+    margin: 15px auto;
+    border-radius: 50px;
+    text-align: center;
+    height: 50px;
+    width: 20vw;
+    border: none;
+}
+
+/**
+    TODO en javascript,
+      si le champ est rempli correctement alors
+      le border ou le background-color devient vert,
+      sinon le champ ne change pas ou devient rouge
+      si le champ n'est pas rempli correctement
+      (mot de passe trop court ou regex d'adresse mail pas respectée par exemple lors de l'inscription, pas pendant le login !)
+ */
+.fields:focus{
+    animation-name: animationFocusFormInput;
+    animation-duration: 0.2s;
+    width: 25vw;
+    background-color: rgb(169, 195, 245);
+    outline: none;
+
+}
+
+.fields:not(:focus){
+    animation-name: animationNotFocusFormInput;
+    animation-duration: 0.2s;
+    background-color: rgb(169, 195, 245);
+    border: none;
+}
+
+.submitButton{
+    width: 15vw;
+    margin: 15px auto;
+    outline: none;
+}
+
+@media screen and (max-width: 900px) {
+    .loginRegisterContainer{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        width: 80vw;
+        margin: 10vh 10vw;
+    }
+    .inputForm{
+        width: 60vw;
+        border: none;
+    }
+    .submitButton{
+        width: 40vw;
+    }
+}
+
+@keyframes animationFocusFormInput {
+    from{
+        width: 20vw;
+        border: none;
+        background-color: rgb(169, 195, 245);
+    }
+    to{
+        width: 25vw;
+        background-color: rgb(169, 195, 245);
+    }
+}
+
+@keyframes animationNotFocusFormInput {
+    from{
+        width: 25vw;
+        background-color: rgb(169, 195, 245);
+    }
+    to{
+        width: 20vw;
+        border: none;
+        background-color: rgb(169, 195, 245);
+    }
+}
+
+input:focus{
+    outline: none;
+}
+
+.active {
+    background-color: rgb(4, 57, 119);
+}
+
+
+/** MESSAGING */
+#openedConv{
+    height: 93vh;
+    padding: 0;
+    width: 80%;
+}
+
+.messages{
+    top: 0;
+    overflow:auto;
+    height: 90%;
+}
+
+.row{
+    padding: 0;
+    width: 100%;
+}
+
+.messagePageContainer {
+    background-color: rgb(29, 62, 111);
+    width: 65%;
+    margin-left: 15%;
+    margin-right: 70%;
+    height: 100vh;
+}
+/** CONTACTS */
+#userConvs{
+    width: 20%;
+    background-color: rgb(29, 62, 111);
+    border-right: 2px solid rgb(20, 49, 92);
+    height: 100vh;
+    padding: 0;
+    position: relative;
+}
+
+.contacts{
+    width: 100%;
+    padding: 0;
+}
+
+.contact{
+    border-bottom: 2px solid rgb(20, 49, 92);
+    width: 100%;
+    padding: 0.5em;
+}
+
+/** MESSAGES */
+li {
+	list-style-type: none;
+}
+
+.headConv{
+    padding: 1em;
+    width: 101%;
+    background-color: rgb(21, 58, 114);
+}
+
+.recipient{
+    color: rgb(169, 195, 245);
+}
+
+.self{
+    background-color: rgb(40, 84, 150);
+    width: 60%;
+    padding: 1em;
+    border-radius: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-right: 0.5em;
+}
+
+.other{
+    background-color: rgb(40, 84, 150);
+    width: 60%;
+    padding: 1em;
+    border-radius: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.containerInput{
+    padding: 0;
+    width: 100%;
+    position: relative;
+}
+#textarea{
+    width: 70%;
+    height: 3em;
+    border-radius: 1em;
+    border: none;
+    padding: 10px;
+    bottom: 0;
+    margin-left: 10%;
+
+}
+
+/* BOUTON */
+.submit-msg-btn{
+    background-color: rgb(169, 195, 245);
+    height: 2.8em;
+    width:  2.8em;
+    padding: 10px;
+    border: none;
+    border-radius: 1.4em;
+    margin-left: 0.5em;
+    position: absolute;
+    top: 5%;
+}
+
+
+
+/** TESTS */
+#wrapperDiv{
+    width: 100%;
+}
+
+#content{
+    width: 100%;
+}
+
+.adminButtonChoice{
+    border-radius: 5%;
+    background-color: rgb(79,126,217);
+    border: none;
+}
+
+.table-bordered{
+    margin: 2vh 3vw;
+    color: rgb(160, 191, 239);
+    width: 80vw;
+}
+
+@media screen and (max-width: 1350px) {
+    .table-bordered{
+        display: none;
+    }
+}
+
+th, td{
+    padding: 10px;
+}
+
+tr{
+    overflow: auto;
+    max-width: 100px;
+}
+
+tr:nth-child(even){
+    background-color: rgb(31, 66, 121);
+}
+
+th{
+    text-decoration: underline rgb(7, 100, 191) 3px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(31, 66, 121);
+}
+
+h3{
+    margin-top: 25px;
+    text-align: center;
+    color: white;
+}
+
+.memberTableButton {
+    background-color: rgb(79, 126, 217);
+    border-radius: 2%;
+    border: none;
+    margin-top: 2px;
+}
+
+#postRemoveButton{
+    background-color: rgb(79,126,217);
+    border-radius: 2%;
+    border: none;
+}
+
+.alert-warning{
+    background: none;
+    color: rgb(173, 173, 173);
+}
+
+.resultUserSearch{
+    color: rgb(190, 182, 231);
+}
+
+.resultUserSearchWrapper {
+    margin-bottom: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 5px;
+    background-color: #043977;
+    padding: 20px;
+}
+
+.resultUserSearchWrapper:hover{
+    background-color: #285496;
+}
+
+
+.resultUserSearch:hover{
+    color: rgb(190, 182, 231);
+}
+
+#resultSearchTitle{
+    color: rgb(190, 182, 231);
+}
+
+
+#followSign {
+    font-size: small;
+    background-color: #4f7ed9;
+    padding: 1px 4px 1px 4px;
+    border-radius: 5px;
+    display: inline;
+    vertical-align: middle;
+}
+
+#followButton, #sendMessageButton {
+    font-size: small;
+    background-color: #2c5096;
+    border-radius: 5px;
+    padding: 1px 4px 1px 4px;
+    display: inline;
+    text-align: end;
+    vertical-align: middle;
+}
+
+#followButton:hover, #sendMessageButton:hover {
+    background-color: #153058;
+}
+
+
+
+.remove_button{
+    font-size: x-small;
+    padding: 2px;
+    background-color: rgb(248,215,218);
+    color: rgb(132,32,41);
+    border-radius: 4px;
+    display: inline;
+    vertical-align: middle;
+    margin: 10px;
+    text-decoration: dashed;
+}
+
+
+.messageColumnAdmin{
+    max-width: 15vw;
+    overflow: auto;
+    justify-content: center;
+}
+
+.adminHandlingButton {
+    background-color: #1f4279;
+    border-color: #1f4279;
+}
