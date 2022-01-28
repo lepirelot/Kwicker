@@ -1,5 +1,4 @@
 import HomePage from "../Pages/HomePage";
-import NewPage from "../Pages/NewPage";
 import RegisterPage from "../Pages/RegisterPage"
 import ProfilePage from "../Pages/ProfilePage";
 import TopKwicks from "../Pages/TopKwicks";
@@ -15,7 +14,6 @@ import load_user from "../../utils/load_user";
 // Configure your routes here
 const routes = {
   "/": HomePage,
-  "/new": NewPage,
   "/register": RegisterPage,
   "/profile" : ProfilePage,
   "/top_kwicks" : TopKwicks,

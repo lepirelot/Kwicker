@@ -34,7 +34,7 @@ function showPostsHtml(page, posts){
                 <div class="col-sm-auto">
                     <div class="col-sm-5" id="postAuthor">
 <!--                    /profile?idUser=${post.id_user}-->
-                        <a class="userName" id="postusersender${post.id_user}" href="/profile?idUser=${post.id_user}">
+                        <a class="userName" id="postusersender${post.id_user}" href="">
                             ${post.username}
                         </a>
                       ${removeButton}
@@ -53,12 +53,12 @@ function showPostsHtml(page, posts){
         page.innerHTML += postRow;
     });
 
-    // for (const item of document.getElementsByClassName("userName")) {
-    //     item.addEventListener('click', (e) => {
-    //         e.preventDefault();
-    //         Redirect('/profile?idUser=' + item.id.replace("postusersender", ""));
-    //     })
-    // }
+    for (const item of document.getElementsByClassName("userName")) {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            Redirect('/profile?idUser=' + item.id.replace("postusersender", ""));
+        })
+    }
 }
 
 async function GetPosts(page, profilePosts = null, isHomepage = false, isLikesPost = false) {

@@ -40,11 +40,11 @@ const ProfilePage = async () => {
 
     const followSign = document.getElementById("followSign");
     const followButton = document.getElementById("followButton");
-    const sendMessage = document.getElementById("sendMessageButton");
-    sendMessage.hidden = true;
+    const sendMessageButton = document.getElementById("sendMessageButton");
+    sendMessageButton.hidden = true;
     // Add follow button if other profile
     if (user.id_user !== userConnected.id_user) {
-        sendMessage.hidden = false;
+        sendMessageButton.hidden = false;
         followSign.hidden = true;
         if ((await existFollow(userConnected.id_user, idCurrentUser, userConnected.token)).status === 201) {
             followSign.hidden = false;
@@ -69,7 +69,7 @@ const ProfilePage = async () => {
                     e.target.innerHTML = "Suivre"
                 }
             } else if (e.target.id === "sendMessageButton") {
-                Redirect('/messages?idUser=' + idCurrentUser);
+                Redirect('/newMessages?User='+ idCurrentUser);
             }
         });
     } else {

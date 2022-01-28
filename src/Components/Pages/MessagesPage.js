@@ -1,10 +1,10 @@
-import createMessagePage from "../Modules/GetMessagesModule"
-
 /**
  * Render the Messages
  */
+import createMessagePage from "../Modules/GetMessagesModule";
 
-const Messages = async () => {
+
+const NewMessages = async () => {
     try {
         await createMessagePage();
     } catch (e) {
@@ -12,4 +12,4 @@ const Messages = async () => {
     }
 };
 
-export default Messages;
+export default NewMessages;
