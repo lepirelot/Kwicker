@@ -4,23 +4,18 @@
  * - the URI associated to a page shall be given in the attribute "data-uri" of the Navbar
  * - the router will show the Page associated to this URI when the user click on a nav-link
  */
-import twitterLogo from "../../img/twitter.png";
-import facebookLogo from "../../img/facebookLogo.jpg";
 
 const Footer = () => {
 
     const footerWrapper = document.querySelector("#footerWrapper");
 
 
-    let footer = `
+    footerWrapper.innerHTML = `
 <!--        <a href="https://twitter.com/?lang=fr"><img id="twitter" class="reseau" alt="Twitter logo"></a>-->
 <!--        <a href="https://www.instagram.com/?hl=fr"><img id="instagram" class="reseau" alt="Instagram logo"></a>-->
 <!--        <a href="https://fr-fr.facebook.com/"><img id="facebook" class="reseau" alt="Facebook logo"></a>-->
 <!--        <p class="reseau">Twitter</p><p class="reseau">Instagram</p><p class="reseau">Facebook</p>-->
   `;
-
-
-    footerWrapper.innerHTML = footer;
 
 
 
