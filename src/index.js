@@ -5,7 +5,6 @@ import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Navbar/Footer";
 import { Router } from "./Components/Router/Router";
 import load_user from "./utils/load_user";
-import GetMessagesModuleNew from "./Components/Modules/GetMessagesModule";
 
 const actuelRoot = window.location.pathname;
 const isConnected = window.localStorage.length !== 0;
