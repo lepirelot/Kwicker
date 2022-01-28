@@ -2,5 +2,4 @@
 .idea
 package-lock.json
 webpack.config.js
-LoginPage.js
 .env

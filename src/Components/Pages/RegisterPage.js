@@ -6,18 +6,19 @@ import load_user from "../../utils/load_user";
 
 const registerDiv = `
         <div id="registerPage">
-                <form id="registerForm" class="loginRegisterContainer">
-                    <h3 class="loginText">Kwicker</h3>
-                    <div id="errorRegister"></div>
-                    <input class="inputForm fields" type="text" id="lastnameRegister" placeholder="Nom">
-                    <input class="inputForm fields" type="text" id="forenameRegister" placeholder="Prénom">
-                    <input class="inputForm fields" type="text" id="usernameRegister" placeholder="Nom d'utilisateur">
-                    <input class="inputForm fields" type="email" id="emailRegister" placeholder="Adresse mail">
-                    <input class="inputForm fields" type="password" id="passwordRegister" placeholder="Mot de passe">
-                    <input class="inputForm fields" type="password" id="passwordConfirmationRegister" placeholder="Confirmez votre mot de passe">
-                    <input class="inputForm submitButton" type="submit" value="S'inscrire" id="registerButton">
-                    <a class="loginText" type="button" id="goToLogin">J'ai déjà un compte</a>
-                </form>
+            <h1 style="color: red">This website is still in developpement, it's not secure for your privacy at this time.</h1>
+            <form id="registerForm" class="loginRegisterContainer">
+                <h3 class="loginText">Kwicker</h3>
+                <div id="errorRegister"></div>
+                <input class="inputForm fields" type="text" id="lastnameRegister" placeholder="Nom">
+                <input class="inputForm fields" type="text" id="forenameRegister" placeholder="Prénom">
+                <input class="inputForm fields" type="text" id="usernameRegister" placeholder="Nom d'utilisateur">
+                <input class="inputForm fields" type="email" id="emailRegister" placeholder="Adresse mail">
+                <input class="inputForm fields" type="password" id="passwordRegister" placeholder="Mot de passe">
+                <input class="inputForm fields" type="password" id="passwordConfirmationRegister" placeholder="Confirmez votre mot de passe">
+                <input class="inputForm submitButton" type="submit" value="S'inscrire" id="registerButton">
+                <a class="loginText" type="button" id="goToLogin">J'ai déjà un compte</a>
+            </form>
         </div>
     `;
 
