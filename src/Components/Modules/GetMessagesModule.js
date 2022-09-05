@@ -73,8 +73,9 @@ async function initializeConversation(username) {
 async function createContactsBar() {
     //Create contacts bar
     let contactsBar = document.querySelector(".contacts");
-    if (Object.keys(conversations).length === 2)
-        contactsBar = await getContactBarHtml(conversations);
+    if (Object.keys(conversations).length === 2) {
+        contactsBar.innerHTML = await getContactBarHtml(conversations);
+    }
     else
         for (let conversation of conversations) {
             if(conversation.id_sender === load_user.loadUser().id_user &&
@@ -103,8 +104,8 @@ function verifyContactsBarContains(id_contact) {
     return false;
 }
 
-async function getContactBarHtml(id_contact) {
-    let contact = await ApiModule.getBaseInformationsUser(id_contact);
+async function getContactBarHtml(conversations) {
+    let contact = await ApiModule.getBaseInformationsUser(conversations[0].id_sender);
     return `
             <div class="contactLink" id=${contact.id_user}>
                 <li>

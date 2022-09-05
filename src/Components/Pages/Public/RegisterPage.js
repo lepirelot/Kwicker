@@ -106,6 +106,7 @@ async function register(e) {
         }
 
         const user = await responseRegister.json();
+
         window.localStorage.setItem("user", JSON.stringify(user));
 
         const requestMessage = {
