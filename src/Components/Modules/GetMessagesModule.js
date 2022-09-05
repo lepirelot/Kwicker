@@ -74,18 +74,11 @@ async function createContactsBar() {
     //Create contacts bar
     let contactsBar = document.querySelector(".contacts");
     if (Object.keys(conversations).length === 2) {
-        contactsBar.innerHTML = await getContactBarHtml(conversations);
+        await showContactInContactBar(conversations[0], contactsBar);
     }
     else
         for (let conversation of conversations) {
-            if(conversation.id_sender === load_user.loadUser().id_user &&
-                !verifyContactsBarContains(conversation.id_recipient)
-            )
-                contactsBar.innerHTML += await getContactBarHtml(conversation.id_recipient);
-            else if(conversation.id_recipient === load_user.loadUser().id_user &&
-                !verifyContactsBarContains(conversation.id_sender)
-            )
-                contactsBar.innerHTML += await getContactBarHtml(conversation.id_sender);
+            await showContactInContactBar(conversation, contactsBar);
         }
     const contacts = document.querySelectorAll(".contactLink");
     for (let contact of contacts)
@@ -96,6 +89,17 @@ async function createContactsBar() {
         });
 }
 
+async function showContactInContactBar(conversation, contactsBar) {
+    if(conversation.id_sender === load_user.loadUser().id_user &&
+        !verifyContactsBarContains(conversation.id_recipient)
+    )
+        contactsBar.innerHTML += await getContactBarHtml(conversation.id_recipient);
+    else if(conversation.id_recipient === load_user.loadUser().id_user &&
+        !verifyContactsBarContains(conversation.id_sender)
+    )
+        contactsBar.innerHTML += await getContactBarHtml(conversation.id_sender);
+}
+
 function verifyContactsBarContains(id_contact) {
     const contacts = document.querySelectorAll(".contactLink");
     for(let contact of contacts)
@@ -104,8 +108,8 @@ function verifyContactsBarContains(id_contact) {
     return false;
 }
 
-async function getContactBarHtml(conversations) {
-    let contact = await ApiModule.getBaseInformationsUser(conversations[0].id_sender);
+async function getContactBarHtml(idUser) {
+    const contact = await ApiModule.getBaseInformationsUser(idUser);
     return `
             <div class="contactLink" id=${contact.id_user}>
                 <li>
