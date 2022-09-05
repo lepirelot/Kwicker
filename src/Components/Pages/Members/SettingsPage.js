@@ -1,5 +1,5 @@
-import load_user from "../../utils/load_user";
-import notificationModule from "../Modules/NotificationModule";
+import load_user from "../../../utils/load_user";
+import notificationModule from "../../Modules/NotificationModule";
 
 const SettingsPage = async () => {
 

@@ -1,14 +1,14 @@
-import HomePage from "../Pages/HomePage";
-import RegisterPage from "../Pages/RegisterPage"
-import ProfilePage from "../Pages/ProfilePage";
-import TopKwicks from "../Pages/TopKwicks";
+import HomePage from "../Pages/Members/HomePage";
+import RegisterPage from "../Pages/Public/RegisterPage"
+import ProfilePage from "../Pages/Members/ProfilePage";
+import TopKwicks from "../Pages/Members/TopKwicks";
 import UserLikesPage from "../Pages/UserLikesPage";
-import LoginPage from "../Pages/LoginPage";
-import AdminPage from "../Pages/AdminPage";
-import Logout from "../Pages/Logout";
+import LoginPage from "../Pages/Public/LoginPage";
+import AdminPage from "../Pages/Admins/AdminPage";
+import Logout from "../Pages/Members/Logout";
 import UsersPage from "../Pages/UsersPage";
-import Messages from "../Pages/MessagesPage";
-import SettingsPage from "../Pages/SettingsPage";
+import Messages from "../Pages/Members/MessagesPage";
+import SettingsPage from "../Pages/Members/SettingsPage";
 import load_user from "../../utils/load_user";
 
 // Configure your routes here

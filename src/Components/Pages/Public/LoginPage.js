@@ -1,7 +1,7 @@
-import Navbar from "../Navbar/Navbar";
-import {Redirect} from "../Router/Router";
+import Navbar from "../../Navbar/Navbar";
+import {Redirect} from "../../Router/Router";
 import anime from "animejs";
-import notificationModule from "../Modules/NotificationModule";
+import notificationModule from "../../Modules/NotificationModule";
 
 const loginDiv = `
         <div id="loginPage">

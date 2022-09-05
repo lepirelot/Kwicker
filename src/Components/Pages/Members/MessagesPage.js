@@ -1,7 +1,7 @@
 /**
  * Render the Messages
  */
-import createMessagePage from "../Modules/GetMessagesModule";
+import createMessagePage from "../../Modules/GetMessagesModule";
 
 
 const NewMessages = async () => {

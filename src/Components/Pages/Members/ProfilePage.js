@@ -1,6 +1,6 @@
-import GetPostsModule from "../Modules/GetPostsModule";
-import load_user from "../../utils/load_user";
-import {Redirect} from "../Router/Router";
+import GetPostsModule from "../../Modules/GetPostsModule";
+import load_user from "../../../utils/load_user";
+import {Redirect} from "../../Router/Router";
 
 const ProfilePage = async () => {
     if (!location.search.startsWith("?idUser=")) location.pathname = "/";

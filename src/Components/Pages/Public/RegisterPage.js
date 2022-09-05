@@ -1,8 +1,8 @@
-import {Redirect} from "../Router/Router";
-import Navbar from "../Navbar/Navbar";
+import {Redirect} from "../../Router/Router";
+import Navbar from "../../Navbar/Navbar";
 import anime from "animejs";
-import notificationModule from "../Modules/NotificationModule";
-import load_user from "../../utils/load_user";
+import notificationModule from "../../Modules/NotificationModule";
+import load_user from "../../../utils/load_user";
 
 const registerDiv = `
         <div id="registerPage">

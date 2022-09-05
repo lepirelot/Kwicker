@@ -1,4 +1,4 @@
-import Tables from "../../utils/tables";
+import Tables from "../../../utils/tables";
 
 const adminPagehtml = `
     <div id="adminPage">
