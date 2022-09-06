@@ -122,6 +122,8 @@ async function showMessages(){
     if(messages) {
         let chats = document.querySelector(".chat");
         chats.innerHTML = await createMessagesHtml(messages);
+        const messagesHTML = document.querySelector(".messages");
+        messagesHTML.scrollTop = messagesHTML.scrollHeight;
     }
     interval = setInterval(showMessages, 5000);
 }
