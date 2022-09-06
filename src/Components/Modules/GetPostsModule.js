@@ -54,10 +54,7 @@ function showPostsHtml(page, posts){
     });
 
     for (const item of document.getElementsByClassName("userName")) {
-        item.addEventListener('click', (e) => {
-            e.preventDefault();
-            Redirect('/profile?idUser=' + item.id.replace("postusersender", ""));
-        })
+        load_user.loadProfile(item);
     }
 }
 
