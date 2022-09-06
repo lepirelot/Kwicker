@@ -70,7 +70,7 @@ async function initializeConversation(username) {
 async function createContactsBar() {
     //Create contacts bar
     let contactsBar = document.querySelector(".contacts");
-    if (Object.keys(conversations).length === 2) {
+    if (Object.keys(conversations).length === 1) {
         await showContactsInContactBar(conversations[0], contactsBar);
     }
     else
