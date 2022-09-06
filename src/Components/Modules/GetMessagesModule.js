@@ -74,11 +74,11 @@ async function createContactsBar() {
     //Create contacts bar
     let contactsBar = document.querySelector(".contacts");
     if (Object.keys(conversations).length === 2) {
-        await showContactInContactBar(conversations[0], contactsBar);
+        await showContactsInContactBar(conversations[0], contactsBar);
     }
     else
         for (let conversation of conversations) {
-            await showContactInContactBar(conversation, contactsBar);
+            await showContactsInContactBar(conversation, contactsBar);
         }
     const contacts = document.querySelectorAll(".contactLink");
     for (let contact of contacts)
@@ -89,7 +89,7 @@ async function createContactsBar() {
         });
 }
 
-async function showContactInContactBar(conversation, contactsBar) {
+async function showContactsInContactBar(conversation, contactsBar) {
     if(conversation.id_sender === load_user.loadUser().id_user &&
         !verifyContactsBarContains(conversation.id_recipient)
     )
