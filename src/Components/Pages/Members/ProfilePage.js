@@ -69,7 +69,7 @@ const ProfilePage = async () => {
                     e.target.innerHTML = "Suivre"
                 }
             } else if (e.target.id === "sendMessageButton") {
-                Redirect('/newMessages?User='+ idCurrentUser);
+                Redirect('/messages?User='+ idCurrentUser);
             }
         });
     } else {
