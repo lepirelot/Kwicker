@@ -70,7 +70,7 @@ p{
     width: 75%;
     margin-left: auto;
     margin-right: auto;
-    
+    position: relative;
 }
 #biography{
     font-size: x-small;
@@ -168,6 +168,12 @@ a, a:hover, a:focus {
 #sidebar ul li.active{
     color: rgb(21, 48, 88);
     background: rgb(101, 148, 239);
+}
+
+#banner #camera_icon {
+    position: relative;
+    bottom: 0;
+    left: 900px;
 }
 
 

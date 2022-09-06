@@ -10,6 +10,7 @@ import UsersPage from "../Pages/UsersPage";
 import Messages from "../Pages/Members/MessagesPage";
 import SettingsPage from "../Pages/Members/SettingsPage";
 import load_user from "../../utils/load_user";
+import test from "../Pages/test";
 
 // Configure your routes here
 const routes = {
@@ -23,7 +24,8 @@ const routes = {
   "/logout": Logout,
   "/users": UsersPage,
   "/settings": SettingsPage,
-  "/messages": Messages
+  "/messages": Messages,
+  "/test": test
 };
 
 /**
