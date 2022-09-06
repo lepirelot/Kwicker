@@ -57,11 +57,8 @@ function findId(str){
 }
 
 async function initializeConversation(username) {
-    if(interval)
-        clearInterval(interval);
     showSelectedConversation(id_contact, username);
     await showMessages();
-    interval = setInterval(showMessages, 5000);
     const sendMessageButton = document.getElementById("sendMessageButton");
     sendMessageButton.addEventListener("click", createSendMessageFeature);
 }
@@ -119,11 +116,14 @@ async function getContactBarHtml(idUser) {
 }
 
 async function showMessages(){
+    if(interval)
+        clearInterval(interval);
     const messages = await ApiModule.getMessages(load_user.loadUser().id_user, id_contact);
     if(messages) {
         let chats = document.querySelector(".chat");
         chats.innerHTML = await createMessagesHtml(messages);
     }
+    interval = setInterval(showMessages, 5000);
 }
 
 async function createMessagesHtml(messages) {
