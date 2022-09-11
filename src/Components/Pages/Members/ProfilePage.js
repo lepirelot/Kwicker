@@ -21,7 +21,7 @@ const ProfilePage = async () => {
     pageDiv.innerHTML = `
             <div class="mainContent" id="contentProfilePage">
                 <div>
-                    <div id="banner"><!-- Camera icon-->
+                    <div id="banner"><!-- Camera icon this id becomes "profile_image" after uploaded image-->
                         <div id="camera_icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-camera" viewBox="0 0 16 16">
                                 <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"/>
@@ -93,9 +93,13 @@ const ProfilePage = async () => {
 
     //Image event
     pageDiv.addEventListener("change", image.imageUploaded);
-    pageDiv.addEventListener("submit", (e) => {
+    pageDiv.addEventListener("submit", async (e) => {
         e.preventDefault();
-        ApiModule.uploadImage(idCurrentUser, image.getImageBase64());
+        if (await ApiModule.uploadImage(idCurrentUser, image.getImageBase64()) === true) {
+            const banner = document.querySelector("#banner");
+            banner.id = "profile_image";
+            banner.innerHTML = `<img src='data:image/jpeg;base64,${image.getImageBase64()}'>`;
+        }
     });
 
 }
