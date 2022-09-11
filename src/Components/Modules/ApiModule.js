@@ -249,6 +249,30 @@ async function getConversations(id_user) {
     return await response.json();
 }
 
+/**
+ * Upload the profile image
+ * @param idUser the user id
+ * @param imageBase64 the image in the base64 code
+ */
+async function uploadImage(idUser, imageBase64) {
+    const request = {
+        method: "PUT",
+        headers: {
+            "Authorization": load_user.getToken(),
+            "Content-Type": "application/json"
+
+        },
+        body: JSON.stringify({
+            idUser: idUser,
+            imageBase64: imageBase64
+        })
+    };
+    const response = await fetch(`api/images/profile`, request);
+    if (!response.ok) {
+        throw new Error("fetch error : " + response.status + " : " + response.statusText)
+    }
+}
+
 export default {
     sendMessage,
     getPosts,
@@ -259,5 +283,6 @@ export default {
     getRecipients,
     getSenders,
     getTheLatestConversation,
-    getConversations
+    getConversations,
+    uploadImage
 };

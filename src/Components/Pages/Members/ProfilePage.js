@@ -1,13 +1,14 @@
 import GetPostsModule from "../../Modules/GetPostsModule";
 import load_user from "../../../utils/load_user";
 import {Redirect} from "../../Router/Router";
+import image from "../../../utils/image";
+import ApiModule from "../../Modules/ApiModule";
 
 const ProfilePage = async () => {
     if (!location.search.startsWith("?idUser=")) location.pathname = "/";
 
     // Init
     const pageDiv = document.querySelector("#page");
-    pageDiv.innerHTML = ``;
 
     // Get base user informations
     const idCurrentUser = new URLSearchParams(window.location.search).get("idUser");
@@ -17,7 +18,7 @@ const ProfilePage = async () => {
     let biographyDisplay = user.biography;
     if (!user.biography) biographyDisplay = "";
 
-    pageDiv.innerHTML += `
+    pageDiv.innerHTML = `
             <div class="mainContent" id="contentProfilePage">
                 <div>
                     <div id="banner"><!-- Camera icon-->
@@ -26,6 +27,10 @@ const ProfilePage = async () => {
                                 <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"/>
                                 <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
                             </svg>
+                            <form>
+                                <input id="profile_background_image" type="file"><br>
+                                <input type="submit">
+                            </form>
                         </div>
                     </div>
                     <div id="userContainer">
@@ -43,7 +48,6 @@ const ProfilePage = async () => {
             </div>
         `;
     if (biographyDisplay === "") document.getElementById("biography").hidden = true;
-
 
     const followSign = document.getElementById("followSign");
     const followButton = document.getElementById("followButton");
@@ -86,6 +90,14 @@ const ProfilePage = async () => {
 
     // Get posts sorted by date
     await GetPostsModule(pageDiv, idCurrentUser);
+
+    //Image event
+    pageDiv.addEventListener("change", image.imageUploaded);
+    pageDiv.addEventListener("submit", (e) => {
+        e.preventDefault();
+        ApiModule.uploadImage(idCurrentUser, image.getImageBase64());
+    });
+
 }
 
 async function existFollow(idUserFollowed, idUserFollower, token) {

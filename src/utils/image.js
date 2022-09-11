@@ -1,4 +1,6 @@
 // code from: https://www.geeksforgeeks.org/how-to-convert-image-into-base64-string-using-javascript/
+import ApiModule from "../Components/Modules/ApiModule";
+
 let base64String = "";
 
 function imageUploaded() {
@@ -15,8 +17,8 @@ function imageUploaded() {
   reader.readAsDataURL(file);
 }
 
-function getBase64String () {
+function getImageBase64() {
   return base64String;
 }
 
-export default {imageUploaded, getBase64String}
+export default {imageUploaded, getImageBase64}
